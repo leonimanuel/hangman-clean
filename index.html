@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- <script src="./node_modules/random-words/index.js"></script> -->
+	<script type="text/javascript" src="randomWords.js"></script>
+	<script type="text/javascript" src="PhraseList.js"></script>
+	<!-- <script src="./node_modules/jquery/dist/jquery.js"></script> -->
+	<script src="jquery.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="index.css">
+	<link href="https://fonts.googleapis.com/css?family=Rye&display=swap" rel="stylesheet">
+	<title>HANGMAN</title>
+</head>
+<body>
+	<h1 id="Title">HANGMAN</h1>
+	<div id="winLose">
+		<div id="lose">You Lose</div>
+		<div id="win">ПОБЕДА</div>
+	</div>
+	<!-- <button onclick="loadNewGame(collectionState)">New Game</button>
+	<br> -->
+	<div id="topic-container">
+		<div id="topics-title" onclick="changeColor()">Pick Your Topic:</div>
+		<div id="topic-box">
+			<div class="topic" id="random-words" onclick="loadNewGame(allTopics)">Random</div>
+			<div class="topic" id="geography-topic-box" onclick="showCollections(event, 'geography')">Geography</div>
+			<div class="topic" id="animals-topic-box" onclick="showCollections(event, 'animals')">Animals</div>
+			<div class="topic" id="music-topic-box" onclick="showCollections(event, 'music')">Musicians</div>
+		</div>
+	</div>
+
+	<div id="collections-wrapper"></div>
+	
+	<div id="gallows-wrapper">
+		<div id="gallows">
+			<img src="noose_man_cropped.png" id="gallows-man">
+			<div class="gallow-stand" id="gallow-pole"></div>
+			<div class="gallow-stand" id="gallow-floor"></div>
+			<div class="gallow-step" id="step-4"></div>
+			<div class="gallow-step" id="step-3"></div>
+			<div class="gallow-step" id="step-2"></div>
+			<div class="gallow-step" id="step-1"></div>
+			<img src="executioner_props.png" class="step0" id="hangman-picture">
+		</div>
+	</div>
+
+	<div id="guessed-letter-container">
+		<div id="guesses">Guesses:</div>
+		<div id="putBefore">-- keep on guessing --</div>
+	</div>
+	
+	
+	
+	<div id="phrase-box"></div>
+	<div id="GuessWrapper">
+			<input id="GuessInput" placeholder="guess" maxlength="1" 
+			onfocus="this.placeholder = ''" onblur="this.placeholder = 'guess'"
+			 type="text" name="LetterGuess" autocomplete="off" style="text-align: center"> <!-- onkeyup="this.value = this.value.toUpperCase();" --><!-- onkeyup="checkGuess()" -->
+			<input id="SubmitButton" type="submit" value="submit" onclick="checkGuess()" >
+	</div>
+
+
+	<script type="text/javascript" src="index.js"></script>
+</body>
+</html>
